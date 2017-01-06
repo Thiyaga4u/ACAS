@@ -1,12 +1,8 @@
-# StoreQATests
-
-Part I – Coding Exercise
-Write a suite of three automated browser tests
-  Project Name: StoreQATest
+# Tests
   
     Setup:
     
-      •	Download the StoreQATest Project and import into IntellJ or Eclipse.
+      •	Download the Project and import into IntellJ or Eclipse.
       
       •	Build the project.
       
