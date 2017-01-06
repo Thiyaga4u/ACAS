@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ACAS Automation">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+  <test name="ACAS Automation">
+    <classes>
+      <class name="com.acas.qa.test.ACASTest">
+         <methods>
+            <include name="loginPageACAS"/>
+            <include name="viewEmployeeACAS"/>
+            <include name="addEmployeeACAS"/>
+            <include name="addTransactionACAS"/>
+            <include name="searchEmployeeACAS"/>
+       </methods>
+        </class>
+    </classes>
+  </test>
+</suite>

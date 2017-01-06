@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="ACAS Automation" duration-ms="172616" started-at="2017-01-06T18:45:39Z" finished-at="2017-01-06T18:48:32Z">
+    <groups>
+    </groups>
+    <test name="ACAS Automation" duration-ms="172616" started-at="2017-01-06T18:45:39Z" finished-at="2017-01-06T18:48:32Z">
+      <class name="ACASTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ACASTest@4c70fda8]" name="setUp" is-config="true" duration-ms="5596" started-at="2017-01-06T12:45:39Z" finished-at="2017-01-06T12:45:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginPageACAS()[pri:0, instance:ACASTest@4c70fda8]" name="loginPageACAS" duration-ms="19896" started-at="2017-01-06T12:45:45Z" finished-at="2017-01-06T12:46:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageACAS -->
+        <test-method status="PASS" signature="viewEmployeeACAS()[pri:0, instance:ACASTest@4c70fda8]" name="viewEmployeeACAS" duration-ms="22000" started-at="2017-01-06T12:46:05Z" finished-at="2017-01-06T12:46:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- viewEmployeeACAS -->
+        <test-method status="PASS" signature="addEmployeeACAS()[pri:0, instance:ACASTest@4c70fda8]" name="addEmployeeACAS" duration-ms="36700" started-at="2017-01-06T12:46:27Z" finished-at="2017-01-06T12:47:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addEmployeeACAS -->
+        <test-method status="PASS" signature="addTransactionACAS()[pri:0, instance:ACASTest@4c70fda8]" name="addTransactionACAS" duration-ms="44945" started-at="2017-01-06T12:47:03Z" finished-at="2017-01-06T12:47:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addTransactionACAS -->
+        <test-method status="PASS" signature="searchEmployeeACAS()[pri:0, instance:ACASTest@4c70fda8]" name="searchEmployeeACAS" duration-ms="42339" started-at="2017-01-06T12:47:48Z" finished-at="2017-01-06T12:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchEmployeeACAS -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ACASTest@4c70fda8]" name="tearDown" is-config="true" duration-ms="1139" started-at="2017-01-06T12:48:31Z" finished-at="2017-01-06T12:48:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ACASTest -->
+    </test> <!-- ACAS Automation -->
+  </suite> <!-- ACAS Automation -->
+</testng-results>

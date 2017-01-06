@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ACAS Automation"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="165.880">
+  <properties />
+  
+  
+            <testcase name="addTransactionACAS" time="44.945" classname="ACASTest" />
+                <testcase name="viewEmployeeACAS" time="22.000" classname="ACASTest" />
+                <testcase name="addEmployeeACAS" time="36.700" classname="ACASTest" />
+                <testcase name="searchEmployeeACAS" time="42.339" classname="ACASTest" />
+                <testcase name="loginPageACAS" time="19.896" classname="ACASTest" />
+      
+</testsuite>

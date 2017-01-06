@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ACAS Automation]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="ACAS Automation">
+    <classes>
+      <class name="ACASTest">
+        <methods>
+          <include name="loginPageACAS"/>
+          <include name="viewEmployeeACAS"/>
+          <include name="addEmployeeACAS"/>
+          <include name="addTransactionACAS"/>
+          <include name="searchEmployeeACAS"/>
+        </methods>
+      </class> <!-- ACASTest -->
+    </classes>
+  </test> <!-- ACAS Automation -->
+</suite> <!-- Failed suite [ACAS Automation] -->
