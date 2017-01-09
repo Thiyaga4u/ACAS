@@ -2,9 +2,12 @@ package com.acas.qa.test;
 
 import bsh.StringUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -29,7 +32,7 @@ public class ACASTest {
 		driver = new ChromeDriver();
         System.out.println("driver path is...."+chromeDriverPath);
 		driver.manage().window().maximize();
-    }
+     }
 
     @AfterClass
     public void tearDown() throws Exception {
@@ -42,7 +45,8 @@ public class ACASTest {
 
         driver.get(BASEURL);
         String username = "nathan.m@agalsolutions.com";
-        String password = "agal@1234";
+        String password = "agal@123456";
+
         // home page
         LoginPage loginPage = new LoginPage(driver);
 
@@ -50,8 +54,22 @@ public class ACASTest {
         loginPage.typeUserId(username);
         loginPage.typePwd(password);
 
+        loginPage.clickLogin();
+        Thread.sleep(10000);
+
+        String actMessage =  loginPage.getLoginValidationMessage();
+        String expMessage = "The email or password you entered is wrong.";
+        assertEquals(expMessage, actMessage);
+        Reporter.log("Login Validation Message has been validated");
+
+        String usernameUptd = "nathan.m@agalsolutions.com";
+        String passwordUptd = "agal@1234";
+        // log in
+        loginPage.typeUserId(usernameUptd);
+        loginPage.typePwd(passwordUptd);
         ProfilePage profilePage = loginPage.clickLogin();
         Thread.sleep(10000);
+        Reporter.log("Login Page has been validated Sucessfully");
     }
 
     @Test
@@ -63,6 +81,7 @@ public class ACASTest {
         EmployeePage employeePage = profilePage.clickViewEmployee();
         //employeePage.clickAddEmployee();
         Thread.sleep(10000);
+        Reporter.log("View Employee has been validated Sucessfully");
     }
 
     @Test
@@ -78,8 +97,27 @@ public class ACASTest {
         addemployeePage.selectRole("Employee");
         addemployeePage.selectIsManager("Yes");
 
+        addemployeePage.addFirstName("123456");
+        String actMsg = addemployeePage.getFirstNamevalidnMsg();
+        String expMsg = "First name should contain characters only";
+        assertEquals(expMsg, actMsg);
         addemployeePage.addFirstName("Nathan");
+        Reporter.log("First name Validation Message has been validated");
+
+        addemployeePage.addLastName("23456");
+        String actualMsg = addemployeePage.getLastNamevalidnMsg();
+        String expectedMsg = "Last name should contain characters only";
+        assertEquals(expectedMsg, actualMsg);
+        Reporter.log("Last name Validation Message has been validated");
         addemployeePage.addLastName("Swaminathan");
+
+
+        addemployeePage.addMiddleName("342342342");
+        String actualVldnMsg = addemployeePage.getMiddleNamevalidnMsg();
+        String expectedVldnMsg = "Middle name should contain characters only";
+        assertEquals(expectedVldnMsg, actualVldnMsg);
+        addemployeePage.addMiddleName("342342342");
+        Reporter.log("Middle name Validation Message has been validated");
         addemployeePage.addMiddleName("Murali");
 
         Random random = new Random();
@@ -93,7 +131,7 @@ public class ACASTest {
         addemployeePage.addDOB("12/06/2016");
 
         Random randomNumber = new Random();
-        int randomNum = random.nextInt(100);
+        int randomNum = random.nextInt(10000);
         String randomNmbr = Integer.toString(randomNum);
         String emailID = "nathan.kumar" + randomNmbr + "@agalsolutions.com";
         addemployeePage.addEmail(emailID);
@@ -104,6 +142,8 @@ public class ACASTest {
         String expectedMessage = "×\n" +
                 "Employee \"NATHAN\" Inserted Successfully";
         assertEquals(expectedMessage, actualMessage);
+
+        Reporter.log("Employee has been added and validated Sucessfully");
     }
 
     @Test
@@ -139,6 +179,8 @@ public class ACASTest {
         addTransactionPage.addAge("33");
         addTransactionPage.selectEducation("Doctorate");
         TransactionSearchPage transactionSearchPage = addTransactionPage.clickSaveParticipant();
+
+        Reporter.log("Transaction has been added Sucessfully");
     }
 
     @Test
@@ -155,6 +197,7 @@ public class ACASTest {
         String actualSearchResult = transactionSearchPage.getSearchResults();
         String expectedSearchResult = "TESTING TRANSACTION";
         assertEquals(expectedSearchResult, actualSearchResult);
+        Reporter.log("Transaction has been validated Sucessfully");
     }
 
 }

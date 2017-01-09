@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="166.874">
+           time="179.907">
   <properties />
   
   
-            <testcase name="viewEmployeeACAS" time="21.506" classname="com.acas.qa.test.ACASTest" />
-                <testcase name="addEmployeeACAS" time="36.705" classname="com.acas.qa.test.ACASTest" />
-                <testcase name="addTransactionACAS" time="46.595" classname="com.acas.qa.test.ACASTest" />
-                <testcase name="searchEmployeeACAS" time="42.431" classname="com.acas.qa.test.ACASTest" />
-                <testcase name="loginPageACAS" time="19.637" classname="com.acas.qa.test.ACASTest" />
+            <testcase name="viewEmployeeACAS" time="22.167" classname="com.acas.qa.test.ACASTest" />
+                <testcase name="searchEmployeeACAS" time="42.836" classname="com.acas.qa.test.ACASTest" />
+                <testcase name="addTransactionACAS" time="45.144" classname="com.acas.qa.test.ACASTest" />
+                <testcase name="addEmployeeACAS" time="38.355" classname="com.acas.qa.test.ACASTest" />
+                <testcase name="loginPageACAS" time="31.405" classname="com.acas.qa.test.ACASTest" />
       
 </testsuite>

@@ -31,6 +31,10 @@ public class AddEmployeePage {
     private final By ismanagerLocator = By.id("is_manager");
     private final By dobLocator = By.id("date_of_birth");
 
+    private final By FirstNamevalidnMsg = By.xpath("//small[text()='First name should contain characters only']");
+    private final By LastNamevalidnMsg = By.xpath("//small[text()='Last name should contain characters only']");
+    private final By MiddleNamevalidnMsg = By.xpath("//small[text()='Middle name should contain characters only']");
+
 
     public AddEmployeePage(WebDriver driver) {
         this.driver = driver;
@@ -39,18 +43,21 @@ public class AddEmployeePage {
 
     public AddEmployeePage addFirstName(String firstname) {
         waitforElement(driver, firstnameLocator);
+        driver.findElement(firstnameLocator).clear();
         driver.findElement(firstnameLocator).sendKeys(firstname);
         return this;
     }
 
     public AddEmployeePage addLastName(String lastname) {
         waitforElement(driver, lastnameLocator);
+        driver.findElement(lastnameLocator).clear();
         driver.findElement(lastnameLocator).sendKeys(lastname);
         return this;
     }
 
     public AddEmployeePage addMiddleName(String middlename) {
         waitforElement(driver, middlenameLocator);
+        driver.findElement(middlenameLocator).clear();
         driver.findElement(middlenameLocator).sendKeys(middlename);
         return this;
     }
@@ -123,5 +130,21 @@ public class AddEmployeePage {
         driver.findElement(submitAddEmployeeLocator).click();
         return new ViewEmployeePage(driver);
     }
+
+    public String getFirstNamevalidnMsg() {
+        String s = driver.findElement(FirstNamevalidnMsg).getText();
+        return s;
+    }
+
+    public String getLastNamevalidnMsg() {
+        String s = driver.findElement(LastNamevalidnMsg).getText();
+        return s;
+    }
+
+    public String getMiddleNamevalidnMsg() {
+        String s = driver.findElement(MiddleNamevalidnMsg).getText();
+        return s;
+    }
+
 
 }

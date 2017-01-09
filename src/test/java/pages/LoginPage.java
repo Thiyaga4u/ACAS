@@ -16,17 +16,21 @@ public class LoginPage {
     private final By usernameLocatorBack = By.id("log");
     private final By passwordLocatorBack = By.id("pwd");
     private final By loginButtonLocatorBack = By.id("login");
+    private final By loginValidationMessage = By.xpath("//p[text()='The email or password you entered is wrong. ']");
+
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public LoginPage typeUsername(String username) {
+        driver.findElement(usernameLocatorBack).clear();
         driver.findElement(usernameLocatorBack).sendKeys(username);
         return new LoginPage(driver);
     }
 
     public LoginPage typePassword(String password) {
+        driver.findElement(passwordLocatorBack).clear();
         driver.findElement(passwordLocatorBack).sendKeys(password);
         return new LoginPage(driver);
     }
@@ -55,7 +59,10 @@ public class LoginPage {
         return new ProfilePage(driver);
     }
 
-
+    public String getLoginValidationMessage() {
+        String s = driver.findElement(loginValidationMessage).getText();
+        return s;
+    }
 
 
 
